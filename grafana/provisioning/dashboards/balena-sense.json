@@ -156,6 +156,46 @@
       "type": "gauge"
     },
     {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                150
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "1m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "message": "IAQ above 150!",
+        "name": "Indoor Air Quality (IAQ) rating alert",
+        "noDataState": "no_data",
+        "notifications": [
+          {
+            "uid": "KcfwFLWgz"
+          }
+        ]
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
