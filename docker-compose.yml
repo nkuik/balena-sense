@@ -36,12 +36,12 @@ services:
     restart: always
   automation-api:
     image: nkuik89/automation-api:latest
-  homeassistant:
-    image: homeassistant/home-assistant:stable
-    ports:
-      - "8123:8123"
-    volumes:
-      - ./docker/homeassistant:/config
-    environment:
-      - TZ='Europe/Copenhagen'
-    restart: always
+  # homeassistant:
+  #   image: homeassistant/home-assistant:stable
+  #   ports:
+  #     - "8123:8123"
+  #   volumes:
+  #     - './docker/homeassistant:/config'
+  #   environment:
+  #     - TZ='Europe/Copenhagen'
+  #   restart: always
