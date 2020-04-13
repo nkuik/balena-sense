@@ -1,2 +1,0 @@
-example:
-  password: !env_var PASSWORD default_password
