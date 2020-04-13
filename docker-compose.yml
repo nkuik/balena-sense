@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 volumes:
     sense-data:
 services:
@@ -33,4 +33,15 @@ services:
     image: arm32v6/eclipse-mosquitto
     ports:
       - "1883:1883"
+    restart: always
+  automation-api:
+    image: nkuik89/automation-api:latest
+  homeassistant:
+    image: homeassistant/home-assistant:stable
+    ports:
+      - "8123:8123"
+    volumes:
+      - ./docker/homeassistant:/config
+    environment:
+      - TZ='Europe/Copenhagen'
     restart: always
