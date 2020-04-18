@@ -40,9 +40,10 @@ services:
     restart: always
     image: nkuik89/automation-api:latest
   homeassistant:
-    image: nkuik89/home-assistant:latest
+    image: nkuik89/home-assistant
     ports:
       - "443:8123"
     environment:
       - TZ='Europe/Copenhagen'
+    restart: always
 
