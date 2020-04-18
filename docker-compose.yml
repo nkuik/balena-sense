@@ -11,7 +11,7 @@ services:
     restart: always
     build: ./grafana
     ports:
-      - "80"
+      - "8081"
     volumes:
       - 'sense-data:/data'
     environment:
@@ -39,12 +39,10 @@ services:
       - "8080:8080"
     restart: always
     image: nkuik89/automation-api:latest
-  # homeassistant:
-  #   image: homeassistant/home-assistant:stable
-  #   ports:
-  #     - "8123:8123"
-  #   volumes:
-  #     - './docker/homeassistant:/config'
-  #   environment:
-  #     - TZ='Europe/Copenhagen'
-  #   restart: always
+  homeassistant:
+    image: nkuik89/home-assistant:latest
+    ports:
+      - "443:8123"
+    environment:
+      - TZ='Europe/Copenhagen'
+
